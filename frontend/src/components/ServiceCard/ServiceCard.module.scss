@@ -1,0 +1,52 @@
+.card {
+  border: 1px solid rgba(245, 214, 123, 0.3);
+  padding: 1.75rem;
+  background: rgba(15, 15, 15, 0.85);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.price {
+  font-weight: 600;
+  color: #f5d67b;
+  letter-spacing: 0.08em;
+}
+
+.card p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.highlights li {
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(245, 214, 123, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

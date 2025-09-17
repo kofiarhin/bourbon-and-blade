@@ -1,0 +1,107 @@
+PROMPT FOR CODEX (React + SCSS, scoped via file, simple class names)
+
+Refactor the Student Dashboard UI in React (Vite) using SCSS in a single component stylesheet: studentDashboard.styles.scss.  
+No Tailwind. No CSS Modules. Use arrow function components and default export.  
+Scope styles by wrapping all rules under .student-dashboard to avoid global leakage.  
+Import the SCSS inside StudentDashboard.jsx: import './studentDashboard.styles.scss'.
+
+Create/modify:
+- client/src/pages/StudentDashboard.jsx
+- client/src/pages/studentDashboard.styles.scss
+
+### Implement items 1–6
+
+1) Hero
+- Greeting: “Good {Morning|Afternoon|Evening}, {firstName}!”
+- Avatar (fallback initials).
+- Progress bar with % label.
+- Subtitle: course name + next lesson title.
+
+2) Cards
+- 3 cards (Assignments, Messages, Profile) with hover/active + focus-visible.
+- Assignments: total due + next due (humanized, e.g., “in 2d”).
+- Messages: unread count + last message preview.
+- Profile: completion % + “Update Profile” button.
+- Clickable via mouse/keyboard (Enter/Space), aria-label on each.
+
+3) Quick actions
+- Buttons: “Submit Assignment”, “Join Live Class”, “Ask Mentor”.
+- Loading/disabled states; expose onClick handlers.
+
+4) Course progress
+- Horizontal module timeline (done / in_progress / locked) with pct.
+- “Resume” primary button if an in-progress lesson exists.
+
+5) Announcements
+- Right panel (full-width on mobile) with title, date, snippet, “View”.
+
+6) Responsive
+- ≥1024px: 2 columns (main + announcements), cards in 3-col grid.
+- 768–1023px: cards 2-col.
+- <768px: single column; actions stack full-width.
+- No horizontal overflow.
+
+### Temporary data hooks (replace with API later)
+const useStudent = () => ({ firstName: 'Kofi', avatarUrl: '', profileProgress: 42 });
+const useCourse = () => ({
+  name: 'Full-Stack MERN',
+  completion: 37,
+  nextLesson: { title: 'Intro to Mongoose' },
+  modules: [
+    { id:'m1', title:'Setup', status:'done', pct:100 },
+    { id:'m2', title:'Backend', status:'in_progress', pct:45 },
+    { id:'m3', title:'Frontend', status:'locked', pct:0 }
+  ]
+});
+const useAssignments = () => ({ totalDue: 2, nextDue: new Date(Date.now()+2*864e5) });
+const useMessages = () => ({ unread: 3, last: { from:'Mentor Ada', snippet:'Check your PR notes…' }});
+const useAnnouncements = () => ([
+  { id:1, title:'Live Q&A Friday', date:new Date(), snippet:'Bring your Redux questions.' },
+  { id:2, title:'New Module Released', date:new Date(Date.now()-864e5), snippet:'Authentication & JWT.' }
+]);
+
+### Accessibility
+- Keyboard navigable; visible focus ring.
+- Cards: <button> or <div role="button" tabIndex="0"> + Enter/Space.
+- Announcements rendered as <ul><li>…</li></ul>.
+
+### SCSS (scoped via wrapper)
+File: studentDashboard.styles.scss  
+All rules must live under .student-dashboard:
+
+Required class names inside wrapper:
+- .hero, .greeting, .subtitle, .avatar
+- .actions, .btn, .btn-primary, .btn-ghost
+- .cards, .card
+- .progress, .progress-bar, .track, .fill
+- .timeline
+- .announcements
+- .muted
+
+Style requirements:
+- CSS vars on .student-dashboard: --radius:16px; --gap:16px; --gap-lg:24px; --surface:#161616; --surface-2:#1f1f1f; --text:#eaeaea; --muted:#a0a0a0;
+- Dark-friendly surfaces, soft shadow, rounded corners.
+- .card hover: translateY(-2px); focus-visible outline.
+- .progress-bar .fill animates width.
+- Responsive media queries at 1024px and 768px.
+
+### Component skeleton (use this structure)
+export default () => {
+  // data hooks + timeFromNow(date) helper (no libs)
+  return (
+    <section className="student-dashboard">
+      <header className="hero">…</header>
+      <div className="actions">…</div>
+      <div className="cards">…</div>
+      <div className="progress">
+        <div className="timeline">…</div>
+      </div>
+      <aside className="announcements">…</aside>
+    </section>
+  );
+};
+
+### Utilities
+- Implement timeFromNow(date) to return strings like in 2d, tomorrow, in 3h.
+
+Deliver production-ready code that compiles with Vite, imports studentDashboard.styles.scss inside the component, and uses only the class names above (scoped under .student-dashboard).

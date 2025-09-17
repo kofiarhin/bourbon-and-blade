@@ -1,0 +1,363 @@
+{
+    "business":  {
+                     "name":  "Blade \u0026 Bourbon",
+                     "owner":  "Marcus Johnson",
+                     "phone":  "+44 7911 123456",
+                     "email":  "info@bladeandbourbon.com",
+                     "location":  "21 King Street, Leeds, LS1 2HL",
+                     "hours":  {
+                                   "monday":  "09:00-18:00",
+                                   "tuesday":  "09:00-18:00",
+                                   "wednesday":  "09:00-18:00",
+                                   "thursday":  "09:00-18:00",
+                                   "friday":  "09:00-18:00",
+                                   "saturday":  "09:00-18:00",
+                                   "sunday":  "Closed"
+                               },
+                     "socials":  [
+                                     {
+                                         "platform":  "Instagram",
+                                         "handle":  "@bladeandbourbon",
+                                         "url":  "https://instagram.com/bladeandbourbon"
+                                     },
+                                     {
+                                         "platform":  "TikTok",
+                                         "handle":  "@bladeandbourbon",
+                                         "url":  "https://tiktok.com/@bladeandbourbon"
+                                     },
+                                     {
+                                         "platform":  "Facebook",
+                                         "handle":  "Blade \u0026 Bourbon",
+                                         "url":  "https://facebook.com/bladeandbourbon"
+                                     },
+                                     {
+                                         "platform":  "Website",
+                                         "handle":  "bladeandbourbon.com",
+                                         "url":  "https://bladeandbourbon.com"
+                                     }
+                                 ]
+                 },
+    "goals":  {
+                  "primary":  "Drive online bookings",
+                  "secondary":  "Advertise signature grooming services",
+                  "tertiary":  "Elevate the Blade \u0026 Bourbon premium brand image"
+              },
+    "branding":  {
+                     "vibe":  "Modern luxury",
+                     "colors":  {
+                                    "primary":  "#050505",
+                                    "accent":  "#f5d67b",
+                                    "neutral":  "#ffffff"
+                                },
+                     "fonts":  {
+                                   "headings":  "Playfair Display",
+                                   "body":  "Poppins"
+                               },
+                     "tone":  "Confident, premium, masculine"
+                 },
+    "services":  [
+                     {
+                         "id":  "signature-haircut",
+                         "name":  "Signature Haircut",
+                         "price":  "£48",
+                         "duration":  "45 minutes",
+                         "description":  "Tailored cut with hot towel finish and styling consultation.",
+                         "includes":  [
+                                          "Detailed consultation",
+                                          "Precision cut",
+                                          "Hot towel finish",
+                                          "Signature styling"
+                                      ]
+                     },
+                     {
+                         "id":  "buzz-trim",
+                         "name":  "Buzz Trim",
+                         "price":  "£22",
+                         "duration":  "20 minutes",
+                         "description":  "Clean clipper finish for a sharp, low-maintenance look.",
+                         "includes":  [
+                                          "Clipper cut",
+                                          "Neck tidy",
+                                          "Matte finish"
+                                      ]
+                     },
+                     {
+                         "id":  "skin-fade",
+                         "name":  "Skin Fade",
+                         "price":  "£52",
+                         "duration":  "60 minutes",
+                         "description":  "Ultra-smooth fade with meticulous blending for standout definition.",
+                         "includes":  [
+                                          "Fade consultation",
+                                          "Straight razor detailing",
+                                          "Cooling tonic"
+                                      ]
+                     },
+                     {
+                         "id":  "beard-trim",
+                         "name":  "Beard Trim",
+                         "price":  "£25",
+                         "duration":  "25 minutes",
+                         "description":  "Sculpted beard work with conditioning treatment.",
+                         "includes":  [
+                                          "Beard shaping",
+                                          "Hot towel service",
+                                          "Bourbon-infused oil finish"
+                                      ]
+                     },
+                     {
+                         "id":  "luxury-shave",
+                         "name":  "Luxury Shave",
+                         "price":  "£45",
+                         "duration":  "40 minutes",
+                         "description":  "Five-step straight razor ritual with bourbon-laced products.",
+                         "includes":  [
+                                          "Pre-shave steam",
+                                          "Straight razor shave",
+                                          "Cooling masque",
+                                          "Bourbon splash"
+                                      ]
+                     }
+                 ],
+    "barbers":  [
+                    {
+                        "id":  "marcus-johnson",
+                        "name":  "Marcus Johnson",
+                        "role":  "Owner \u0026 Master Barber",
+                        "bio":  "Award-winning barber with 15 years of grooming high-profile clientele across Leeds and beyond.",
+                        "specialties":  [
+                                            "Skin fades",
+                                            "Luxury shaves",
+                                            "Editorial styling"
+                                        ],
+                        "experience":  "15 years"
+                    },
+                    {
+                        "id":  "elijah-brooks",
+                        "name":  "Elijah Brooks",
+                        "role":  "Senior Barber",
+                        "bio":  "Detail-driven craftsman known for sharp fades and impeccable beard work.",
+                        "specialties":  [
+                                            "Beard sculpting",
+                                            "Fade transitions",
+                                            "Classic cuts"
+                                        ],
+                        "experience":  "9 years"
+                    },
+                    {
+                        "id":  "noah-hardy",
+                        "name":  "Noah Hardy",
+                        "role":  "Barber",
+                        "bio":  "Texture expert blending modern trends with timeless technique.",
+                        "specialties":  [
+                                            "Textured crops",
+                                            "Long hair styling",
+                                            "Buzz trims"
+                                        ],
+                        "experience":  "6 years"
+                    }
+                ],
+    "testimonials":  [
+                         {
+                             "id":  "testimonial-01",
+                             "client":  "James R.",
+                             "service":  "Signature Haircut",
+                             "quote":  "The only place I trust before a pitch. Marcus and the team deliver polish and confidence every time.",
+                             "rating":  5
+                         },
+                         {
+                             "id":  "testimonial-02",
+                             "client":  "Owen L.",
+                             "service":  "Luxury Shave",
+                             "quote":  "Immaculate service with a relaxing ritual that feels indulgent yet precise.",
+                             "rating":  5
+                         },
+                         {
+                             "id":  "testimonial-03",
+                             "client":  "Mason K.",
+                             "service":  "Skin Fade",
+                             "quote":  "Blend game unmatched. Leeds needed this level of craft.",
+                             "rating":  5
+                         }
+                     ],
+    "gallery":  {
+                    "highlights":  [
+                                       {
+                                           "id":  "gallery-01",
+                                           "title":  "Signature Fade",
+                                           "caption":  "Marcus delivering a razor-finish fade for a Friday night lineup.",
+                                           "image":  "/images/gallery/signature-fade.jpg"
+                                       },
+                                       {
+                                           "id":  "gallery-02",
+                                           "title":  "Bourbon Ritual",
+                                           "caption":  "Luxury shave ritual featuring our bourbon-infused hot towel service.",
+                                           "image":  "/images/gallery/bourbon-ritual.jpg"
+                                       },
+                                       {
+                                           "id":  "gallery-03",
+                                           "title":  "Editorial Styling",
+                                           "caption":  "On-set styling for a premium menswear shoot in Leeds.",
+                                           "image":  "/images/gallery/editorial-styling.jpg"
+                                       }
+                                   ]
+                },
+    "booking":  {
+                    "intro":  "Reserve your chair and experience premium grooming tailored to you.",
+                    "steps":  [
+                                  "Select your service",
+                                  "Choose a preferred barber or let us match you",
+                                  "Lock in your time",
+                                  "Arrive 10 minutes early for your bourbon welcome"
+                              ],
+                    "policies":  {
+                                     "cancellation":  "Cancellations within 24 hours incur a 50% service fee.",
+                                     "late":  "Arrivals more than 10 minutes late may need to reschedule to protect next appointments."
+                                 }
+                },
+    "loyalty":  {
+                    "headline":  "B\u0026B Reserve Loyalty",
+                    "description":  "Earn a stamp with every visit. 8 stamps unlock a complimentary luxury upgrade.",
+                    "perks":  [
+                                  "Priority booking windows",
+                                  "Invite-only bourbon tastings",
+                                  "Birthday grooming upgrade"
+                              ]
+                },
+    "feedback":  {
+                     "headline":  "Tell us how we did",
+                     "description":  "We dial every detail to you. Share the moments we should repeat or refine."
+                 },
+    "pages":  {
+                  "home":  {
+                               "hero":  {
+                                            "headline":  "Precision Grooming. Bourbon Rituals.",
+                                            "subheadline":  "Leeds\u0027 premium barbershop where craft meets ceremony.",
+                                            "cta":  "Book Your Chair",
+                                            "ctaSecondary":  "View Services"
+                                        },
+                               "pillars":  [
+                                               {
+                                                   "title":  "Tailored Craft",
+                                                   "description":  "Every cut begins with consultation and ends with signature styling."
+                                               },
+                                               {
+                                                   "title":  "Bourbon Ritual",
+                                                   "description":  "Hot towels, bourbon-laced treatments, and curated playlists."
+                                               },
+                                               {
+                                                   "title":  "Elite Team",
+                                                   "description":  "Award-winning barbers shaping the Leeds grooming scene."
+                                               }
+                                           ],
+                               "sections":  {
+                                                "pillars":  {
+                                                                "title":  "Why Blade \u0026 Bourbon",
+                                                                "subtitle":  "Premium grooming shaped for Leeds professionals"
+                                                            },
+                                                "services":  {
+                                                                 "title":  "Signature Services",
+                                                                 "cta":  "Book Your Ritual"
+                                                             },
+                                                "social":  {
+                                                               "title":  "From the socials",
+                                                               "subtitle":  "Blade \u0026 Bourbon live in the feed"
+                                                           }
+                                            }
+                           },
+                  "about":  {
+                                "story":  {
+                                              "title":  "Our Story",
+                                              "description":  "Marcus opened Blade \u0026 Bourbon to bring a modern gentleman\u0027s club energy to Leeds. Precision cuts, curated bourbons, and an atmosphere built for ambitious men."
+                                          },
+                                "ethos":  [
+                                              {
+                                                  "title":  "Craft Over Trend",
+                                                  "description":  "Techniques grounded in tradition, finished with contemporary styling."
+                                              },
+                                              {
+                                                  "title":  "Hospitality First",
+                                                  "description":  "A curated bar, curated playlists, and service that anticipates your needs."
+                                              },
+                                              {
+                                                  "title":  "Community",
+                                                  "description":  "Supporting local creatives and showcasing Leeds talent in our space."
+                                              }
+                                          ],
+                                "ownerNote":  "Marcus leads a team of specialists delivering precise grooming rituals fuelled by hospitality and bourbon culture."
+                            },
+                  "services":  {
+                                   "intro":  "Choose a service designed to keep you sharp and confident.",
+                                   "addOns":  [
+                                                  {
+                                                      "name":  "Bourbon Hot Towel",
+                                                      "price":  "£12",
+                                                      "description":  "Relaxing towel ritual infused with house-selected bourbon."
+                                                  },
+                                                  {
+                                                      "name":  "Scalp Therapy",
+                                                      "price":  "£18",
+                                                      "description":  "Cooling scalp massage with invigorating tonic and LED comb finish."
+                                                  }
+                                              ],
+                                   "title":  "Services \u0026 Pricing",
+                                   "addOnsTitle":  "Enhance the ritual"
+                               },
+                  "gallery":  {
+                                  "description":  "A look inside our chair work, bourbon bar, and in-house events.",
+                                  "title":  "Gallery"
+                              },
+                  "booking":  {
+                                  "cta":  "Secure your seat",
+                                  "subtitle":  "Select your service, pick your barber, and enjoy the ritual.",
+                                  "title":  "Booking"
+                              },
+                  "testimonials":  {
+                                       "title":  "What our clients say",
+                                       "subtitle":  "Leeds leaders trust Blade \u0026 Bourbon to keep them presentation-ready."
+                                   },
+                  "contact":  {
+                                  "headline":  "Arrive ready. Leave refined.",
+                                  "parking":  "Secure parking available on King Street after 6pm.",
+                                  "emailResponse":  "We respond to emails within one business day.",
+                                  "title":  "Contact"
+                              },
+                  "barbers":  {
+                                  "headline":  "The team behind the blade",
+                                  "description":  "Specialists matched to your hair, beard, and lifestyle goals."
+                              }
+              },
+    "socialFeed":  [
+                       {
+                           "id":  "post-01",
+                           "platform":  "Instagram",
+                           "date":  "2025-09-07",
+                           "content":  "Fresh skin fade with razor detailing by Elijah. Tap to book the look.",
+                           "link":  "https://instagram.com/p/skin-fade"
+                       },
+                       {
+                           "id":  "post-02",
+                           "platform":  "TikTok",
+                           "date":  "2025-09-05",
+                           "content":  "Watch Marcus break down our signature bourbon shave ritual.",
+                           "link":  "https://tiktok.com/@bladeandbourbon/video/ritual"
+                       },
+                       {
+                           "id":  "post-03",
+                           "platform":  "Facebook",
+                           "date":  "2025-09-01",
+                           "content":  "September bookings open now. Reserve prime slots before they go.",
+                           "link":  "https://facebook.com/bladeandbourbon/posts/september"
+                       }
+                   ],
+    "seo":  {
+                "title":  "Blade \u0026 Bourbon | Premium Barbers Leeds",
+                "description":  "Blade \u0026 Bourbon delivers luxury grooming rituals in the heart of Leeds. Book signature haircuts, fades, beard sculpting, and luxury shaves.",
+                "keywords":  [
+                                 "Leeds barbers",
+                                 "premium haircut",
+                                 "luxury shave",
+                                 "men\u0027s grooming Leeds"
+                             ]
+            }
+}

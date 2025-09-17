@@ -1,0 +1,51 @@
+.form {
+  display: grid;
+  gap: 1.25rem;
+  padding: 2rem;
+  background: rgba(8, 8, 8, 0.9);
+  border: 1px solid rgba(245, 214, 123, 0.25);
+  border-radius: 1rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.form select,
+.form input {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(245, 214, 123, 0.2);
+  background-color: rgba(20, 20, 20, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.datetimeRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.form button {
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: linear-gradient(135deg, #f5d67b, #b8860b);
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .datetimeRow {
+    grid-template-columns: 1fr;
+  }
+}

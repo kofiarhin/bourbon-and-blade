@@ -1,0 +1,16 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #050505;
+}
+
+.main {
+  flex: 1;
+  padding: 2rem 1.5rem;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
