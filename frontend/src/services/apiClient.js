@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: '/api',
-  timeout: 10000
+  baseURL: import.meta.env.VITE_BASE_URL || "/api",
+  timeout: 10000,
 });
 
 const setAuthToken = (token) => {
@@ -14,23 +14,30 @@ const setAuthToken = (token) => {
 };
 
 const getContent = async () => {
-  const response = await apiClient.get('/content');
+  const response = await apiClient.get("/content");
   return response.data;
 };
 
 const createBooking = async (payload) => {
-  const response = await apiClient.post('/bookings', payload);
+  const response = await apiClient.post("/bookings", payload);
   return response.data;
 };
 
 const submitFeedback = async (payload) => {
-  const response = await apiClient.post('/feedback', payload);
+  const response = await apiClient.post("/feedback", payload);
   return response.data;
 };
 
 const joinLoyalty = async (payload) => {
-  const response = await apiClient.post('/loyalty', payload);
+  const response = await apiClient.post("/loyalty", payload);
   return response.data;
 };
 
-export { apiClient, setAuthToken, getContent, createBooking, submitFeedback, joinLoyalty };
+export {
+  apiClient,
+  setAuthToken,
+  getContent,
+  createBooking,
+  submitFeedback,
+  joinLoyalty,
+};
