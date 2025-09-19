@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './SectionHeading.module.scss';
 
-const SectionHeading = ({ title, subtitle }) => (
+const SectionHeading = ({ title, subtitle = '' }) => (
   <div className={styles.heading}>
     <h2>{title}</h2>
     {subtitle ? <p>{subtitle}</p> : null}
@@ -11,10 +11,6 @@ const SectionHeading = ({ title, subtitle }) => (
 SectionHeading.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string
-};
-
-SectionHeading.defaultProps = {
-  subtitle: ''
 };
 
 export default SectionHeading;

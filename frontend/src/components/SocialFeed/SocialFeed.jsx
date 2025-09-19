@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './SocialFeed.module.scss';
 
-const SocialFeed = ({ posts }) => (
+const SocialFeed = ({ posts = [] }) => (
   <section className={styles.feed}>
     {posts?.length ? (
       posts.map((post) => (
@@ -34,10 +34,6 @@ SocialFeed.propTypes = {
       link: PropTypes.string
     })
   )
-};
-
-SocialFeed.defaultProps = {
-  posts: []
 };
 
 export default SocialFeed;

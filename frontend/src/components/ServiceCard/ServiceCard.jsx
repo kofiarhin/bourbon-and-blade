@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './ServiceCard.module.scss';
 
-const ServiceCard = ({ name, price, description, highlights }) => (
+const ServiceCard = ({ name, price, description = '', highlights = [] }) => (
   <article className={styles.card}>
     <header>
       <h3>{name}</h3>
@@ -23,11 +23,6 @@ ServiceCard.propTypes = {
   price: PropTypes.string.isRequired,
   description: PropTypes.string,
   highlights: PropTypes.arrayOf(PropTypes.string)
-};
-
-ServiceCard.defaultProps = {
-  description: '',
-  highlights: []
 };
 
 export default ServiceCard;

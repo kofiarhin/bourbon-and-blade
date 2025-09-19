@@ -8,7 +8,7 @@ const initialState = {
   rating: 5
 };
 
-const FeedbackForm = ({ onSubmit }) => {
+const FeedbackForm = ({ onSubmit = undefined }) => {
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (field) => (event) => {
@@ -58,10 +58,6 @@ const FeedbackForm = ({ onSubmit }) => {
 
 FeedbackForm.propTypes = {
   onSubmit: PropTypes.func
-};
-
-FeedbackForm.defaultProps = {
-  onSubmit: undefined
 };
 
 export default FeedbackForm;

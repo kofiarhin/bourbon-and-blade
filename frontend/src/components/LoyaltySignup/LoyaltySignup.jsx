@@ -7,7 +7,7 @@ const initialState = {
   email: ''
 };
 
-const LoyaltySignup = ({ onSubmit }) => {
+const LoyaltySignup = ({ onSubmit = undefined }) => {
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (field) => (event) => {
@@ -53,10 +53,6 @@ const LoyaltySignup = ({ onSubmit }) => {
 
 LoyaltySignup.propTypes = {
   onSubmit: PropTypes.func
-};
-
-LoyaltySignup.defaultProps = {
-  onSubmit: undefined
 };
 
 export default LoyaltySignup;

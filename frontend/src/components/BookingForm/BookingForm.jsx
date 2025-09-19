@@ -11,7 +11,7 @@ const initialState = {
   clientEmail: ''
 };
 
-const BookingForm = ({ services, barbers, onSubmit }) => {
+const BookingForm = ({ services = [], barbers = [], onSubmit }) => {
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (field) => (event) => {
@@ -112,12 +112,6 @@ BookingForm.propTypes = {
     })
   ),
   onSubmit: PropTypes.func
-};
-
-BookingForm.defaultProps = {
-  services: [],
-  barbers: [],
-  onSubmit: undefined
 };
 
 export default BookingForm;
