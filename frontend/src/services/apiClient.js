@@ -1,10 +1,8 @@
 import axios from "axios";
 
-const baseURL =
-  import.meta.env.VITE_BASE_URL ||
-  (import.meta.env.DEV
-    ? "/api"
-    : "https://bourbon-and-blade-3000cca3a2fe.herokuapp.com");
+const baseURL = import.meta.env.DEV
+  ? "http://localhost:5000/api"
+  : "https://bourbon-and-blade-3000cca3a2fe.herokuapp.com/api";
 
 const apiClient = axios.create({
   baseURL,
