@@ -1,7 +1,13 @@
 import axios from "axios";
 
+const baseURL =
+  import.meta.env.VITE_BASE_URL ||
+  (import.meta.env.DEV
+    ? "/api"
+    : "https://bourbon-and-blade-3000cca3a2fe.herokuapp.com");
+
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL || "/api",
+  baseURL,
   timeout: 10000,
 });
 

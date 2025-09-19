@@ -1,0 +1,10 @@
+0000000000000000000000000000000000000000 51bf11ba2e37ca51ad42eaf0683eeea6cb0f5d20 kofi arhin <kofiarhin69@gmail.com> 1758111448 +0100	commit (initial): init
+51bf11ba2e37ca51ad42eaf0683eeea6cb0f5d20 6e84a6b31f1b4212c5bc6980ed25883d5066f48f kofi arhin <kofiarhin69@gmail.com> 1758111762 +0100	commit: added a readme file
+6e84a6b31f1b4212c5bc6980ed25883d5066f48f cf0798f72b935e33db464d8481e3e0ed78dc4157 kofi arhin <kofiarhin69@gmail.com> 1758177136 +0100	merge test: Fast-forward
+cf0798f72b935e33db464d8481e3e0ed78dc4157 77b1a4e7688bb394515ffda9f4c5af84fc15aa6a kofi arhin <kofiarhin69@gmail.com> 1758177655 +0100	commit: added a install script for server
+77b1a4e7688bb394515ffda9f4c5af84fc15aa6a 2a4371adeb4d0bf7c62bdc4c5c5e34aca05f000c kofi arhin <kofiarhin69@gmail.com> 1758178325 +0100	commit: added a default route
+2a4371adeb4d0bf7c62bdc4c5c5e34aca05f000c 4337377a1f349f4fb440267dc7154f03311219d7 kofi arhin <kofiarhin69@gmail.com> 1758182293 +0100	commit: fixing profile issues
+4337377a1f349f4fb440267dc7154f03311219d7 1e74e490948b71cd3579ae916566846d687a0cdd kofi arhin <kofiarhin69@gmail.com> 1758182320 +0100	commit: added a procfile
+1e74e490948b71cd3579ae916566846d687a0cdd faa1c158b6309ff3eefc3ec62625bcdf7974e4af kofi arhin <kofiarhin69@gmail.com> 1758183222 +0100	commit: fixing profile issues
+faa1c158b6309ff3eefc3ec62625bcdf7974e4af 17b5633d428f63a6e6afcfc231eb96e21d1f07ec kofi arhin <kofiarhin69@gmail.com> 1758183462 +0100	commit: fixing package.json issue
+17b5633d428f63a6e6afcfc231eb96e21d1f07ec 774dd2ba09c56da13f2fafd0adec1547c7777050 kofi arhin <kofiarhin69@gmail.com> 1758184429 +0100	commit: fixing deployment issueus

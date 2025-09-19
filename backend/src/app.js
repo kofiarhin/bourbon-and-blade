@@ -8,10 +8,6 @@ const createApp = () => {
   app.use(cors());
   app.use(express.json());
 
-  app.get("/", async (req, res, next) => {
-    return res.json({ message: "welcome to bourbon and blade" });
-  });
-
   registerRoutes(app);
 
   app.use((req, res) => {
