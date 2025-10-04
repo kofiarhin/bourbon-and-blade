@@ -16,49 +16,60 @@ const navItems = [
 
 const Header = () => {
   const { content } = useSiteContent();
-  const business = content?.business || { name: 'Blade & Bourbon', location: '21 King Street, Leeds, LS1 2HL' };
-
+  const business = content?.business || {};
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    const handleScroll = () => setScrolled(window.scrollY > 8);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = open ? 'hidden' : prev;
-    return () => { document.body.style.overflow = prev; };
+    const originalOverflow = document.body.style.overflow;
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = originalOverflow;
+    }
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
   }, [open]);
 
   const closeDrawer = () => setOpen(false);
-  const toggleDrawer = () => setOpen(v => !v);
+  const toggleDrawer = () => setOpen((value) => !value);
 
-  const headerClass = scrolled ? `${styles.header} ${styles.scrolled}` : styles.header;
-  const drawerClass = open ? `${styles.drawer} ${styles.open}` : styles.drawer;
-  const backdropClass = open ? `${styles.backdrop} ${styles.open}` : styles.backdrop;
-  const burgerClass = open ? `${styles.burger} ${styles.open}` : styles.burger;
+  const headerClassName = scrolled
+    ? `${styles.header} ${styles.scrolled}`
+    : styles.header;
+  const drawerClassName = open
+    ? `${styles.drawer} ${styles.open}`
+    : styles.drawer;
+  const backdropClassName = open
+    ? `${styles.backdrop} ${styles.open}`
+    : styles.backdrop;
+  const burgerClassName = open
+    ? `${styles.burger} ${styles.open}`
+    : styles.burger;
   const getLinkClass = ({ isActive }) =>
     isActive ? `${styles.link} ${styles.linkActive}` : styles.link;
 
   return (
-    <header className={headerClass}>
-      {/* Utility bar */}
+    <header className={headerClassName}>
       <div className={styles.utility}>
         <span>{business.location}</span>
       </div>
 
-      {/* Main header bar */}
       <div className={styles.bar}>
         <Link to="/" className={styles.logo} onClick={closeDrawer}>
           <span className={styles.logoText}>{business.name}</span>
         </Link>
 
-        <nav id="primary-navigation" className={styles.nav} aria-label="Primary">
-          {navItems.map(item => (
+        <nav className={styles.nav} aria-label="Primary">
+          {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -72,9 +83,10 @@ const Header = () => {
         </nav>
 
         <div className={styles.cta}>
+          {/* FIX: New Book Now button using ctaOutline */}
           <Link
             to="/booking"
-            className={`${styles.button} ${styles.buttonPrimary}`}
+            className={`${styles.ctaBtn} ${styles.ctaOutline}`}
             onClick={closeDrawer}
             aria-label="Book Now"
           >
@@ -83,7 +95,7 @@ const Header = () => {
 
           <button
             type="button"
-            className={burgerClass}
+            className={burgerClassName}
             aria-label="Toggle menu"
             aria-expanded={open}
             aria-controls="primary-drawer"
@@ -96,22 +108,14 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Drawer */}
       <div
         id="primary-drawer"
-        className={drawerClass}
+        className={drawerClassName}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="primary-navigation"
       >
-        <button
-          type="button"
-          className={styles.drawerClose}
-          onClick={closeDrawer}
-          aria-label="Close menu"
-        />
         <div className={styles.drawerInner}>
-          {navItems.map(item => (
+          {navItems.map((item) => (
             <NavLink
               key={`${item.to}-mobile`}
               to={item.to}
@@ -123,9 +127,10 @@ const Header = () => {
             </NavLink>
           ))}
 
+          {/* Mobile CTA also updated */}
           <Link
             to="/booking"
-            className={`${styles.button} ${styles.buttonPrimary} ${styles.buttonBlock}`}
+            className={`${styles.ctaBtn} ${styles.ctaOutline} ${styles.buttonBlock}`}
             onClick={closeDrawer}
           >
             Book Now
@@ -133,10 +138,9 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Backdrop */}
       <button
         type="button"
-        className={backdropClass}
+        className={backdropClassName}
         aria-label="Close menu"
         onClick={closeDrawer}
       />
