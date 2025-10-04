@@ -29,7 +29,7 @@ $gold: #c9a24a;
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 1rem; // wider padding for mobile
   font-size: 0.75rem;
   color: $muted;
   border-bottom: 1px solid rgba(201, 162, 74, 0.15);
@@ -41,6 +41,7 @@ $gold: #c9a24a;
     content: '📍';
     font-size: 0.9em;
     margin-right: 0.35rem;
+    color: $gold; // gold pin for contrast
     opacity: 0.9;
   }
 }
@@ -123,19 +124,23 @@ $gold: #c9a24a;
   grid-column: 3 / 4;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: stretch; // align button + burger heights
   gap: 0.625rem;
 }
 
 .button {
-  padding: 0.55rem 0.85rem;
+  padding: 0.45rem 1rem; // tighter vertical padding
   border: 1px solid rgba(201, 162, 74, 0.55);
   color: $gold;
   background: transparent;
   border-radius: 999px; // pill shape
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.875rem;
   letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  height: 2.5rem; // match burger height
   transition: transform 0.1s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
   &:hover {
@@ -303,7 +308,7 @@ $gold: #c9a24a;
   }
 
   .button {
-    padding: 0.6rem 1rem;
+    padding: 0.45rem 1rem;
   }
 }
 
