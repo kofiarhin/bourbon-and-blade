@@ -25,13 +25,18 @@ const Home = () => {
 
   const handleLoyaltySubmit = async (formData) => {
     setLoyaltyStatus({ message: 'Welcoming you into the reserve...', tone: 'loading' });
-
     try {
       await joinLoyalty(formData);
-      setLoyaltyStatus({ message: 'You are on the Blade & Bourbon Reserve list. Expect exclusive drops soon.', tone: 'success' });
+      setLoyaltyStatus({
+        message: 'You are on the Blade & Bourbon Reserve list. Expect exclusive drops soon.',
+        tone: 'success'
+      });
       return true;
     } catch (error) {
-      const message = error?.response?.data?.message || error?.message || 'Unable to join right now. Please try again.';
+      const message =
+        error?.response?.data?.message ||
+        error?.message ||
+        'Unable to join right now. Please try again.';
       setLoyaltyStatus({ message, tone: 'error' });
       throw error;
     }
@@ -39,21 +44,32 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
+      {/* HERO */}
       <section className={styles.hero}>
-        <div className={styles.heroText}>
-          <h1>{hero.headline}</h1>
-          <p>{hero.subheadline}</p>
-          <div className={styles.ctaGroup}>
-            <Link to="/booking" className={styles.primaryCta}>
-              {hero.cta}
-            </Link>
-            <Link to="/services" className={styles.secondaryCta}>
-              {hero.ctaSecondary}
-            </Link>
+        <div className={styles.heroInner}>
+          <div className={styles.heroText}>
+            <h1>{hero.headline}</h1>
+            <p>{hero.subheadline}</p>
+            <div className={styles.ctaGroup}>
+              <Link to="/booking" className={styles.primaryCta}>
+                {hero.cta}
+              </Link>
+              <Link to="/services" className={styles.secondaryCta}>
+                {hero.ctaSecondary}
+              </Link>
+            </div>
           </div>
+
+          {hero.media && (
+            <div className={styles.heroMedia}>
+              {/* fallback to img, can extend to video later */}
+              <img src={hero.media} alt={hero.headline || 'Blade & Bourbon'} />
+            </div>
+          )}
         </div>
       </section>
 
+      {/* PILLARS */}
       <section className={styles.pillarsSection}>
         <SectionHeading title={pillarsSection.title} subtitle={pillarsSection.subtitle} />
         <div className={styles.pillars}>
@@ -66,6 +82,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* SERVICES */}
       <section className={styles.servicesSection}>
         <SectionHeading title={servicesSection.title} subtitle={servicesIntro} />
         <div className={styles.servicesGrid}>
@@ -86,11 +103,18 @@ const Home = () => {
         </div>
       </section>
 
+      {/* EXPERIENCE */}
       <section className={styles.experienceSection}>
         <div className={styles.loyaltyColumn}>
-          <LoyaltyBanner headline={loyalty.headline} description={loyalty.description} perks={loyalty.perks} />
+          <LoyaltyBanner
+            headline={loyalty.headline}
+            description={loyalty.description}
+            perks={loyalty.perks}
+          />
           <LoyaltySignup onSubmit={handleLoyaltySubmit} />
-          {loyaltyStatus.message ? <p className={styles[loyaltyStatus.tone]}>{loyaltyStatus.message}</p> : null}
+          {loyaltyStatus.message ? (
+            <p className={styles[loyaltyStatus.tone]}>{loyaltyStatus.message}</p>
+          ) : null}
         </div>
         <div className={styles.feedWrapper}>
           <SectionHeading title={socialSection.title} subtitle={socialSection.subtitle} />
