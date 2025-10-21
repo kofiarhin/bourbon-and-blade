@@ -1,34 +1,38 @@
-import { useEffect, useState, useMemo } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { useSiteContent } from '../../context/ContentContext.jsx';
-import styles from './Header.module.scss';
+import { useEffect, useState, useMemo } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useSiteContent } from "../../context/ContentContext.jsx";
+import styles from "./Header.module.scss";
 
 const navItems = [
-  { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
-  { to: '/services', label: 'Services' },
-  { to: '/gallery', label: 'Gallery' },
-  { to: '/barbers', label: 'Barbers' },
-  { to: '/booking', label: 'Booking' },
-  { to: '/testimonials', label: 'Testimonials' },
-  { to: '/contact', label: 'Contact' }
+  { to: "/", label: "Home", end: true },
+  { to: "/about", label: "About" },
+  { to: "/services", label: "Services" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/barbers", label: "Barbers" },
+  { to: "/booking", label: "Booking" },
+  { to: "/testimonials", label: "Testimonials" },
+  { to: "/contact", label: "Contact" },
 ];
 
 const Header = () => {
   const { content } = useSiteContent();
-  const business = content?.business || { name: 'Blade & Bourbon', location: '21 King Street, Leeds, LS1 2HL' };
+  const business = content?.business || {
+    name: "Blade & Bourbon",
+    location: "21 King Street, Leeds, LS1 2HL",
+  };
 
   // derive a branded logo: serif + gold accent for "Bourbon", one-line
   const brand = useMemo(() => {
-    const name = business.name || 'Blade & Bourbon';
+    const name = business.name || "Blade & Bourbon";
     const parts = name.split(/(Bourbon)/i); // ['Blade & ', 'Bourbon', '']
     return (
       <span className={styles.logoText} aria-label={name}>
         {/* optional mark; hide from screen readers */}
-        <span aria-hidden="true" className={styles.logoMark}>🪒</span>
         {parts.map((p, i) =>
           /bourbon/i.test(p) ? (
-            <span key={i} className={styles.logoAccent}>{p}</span>
+            <span key={i} className={styles.logoAccent}>
+              {p}
+            </span>
           ) : (
             <span key={i}>{p}</span>
           )
@@ -43,24 +47,31 @@ const Header = () => {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     const prev = document.body.style.overflow;
-    document.body.style.overflow = open ? 'hidden' : prev;
-    return () => { document.body.style.overflow = prev; };
+    document.body.style.overflow = open ? "hidden" : prev;
+    return () => {
+      document.body.style.overflow = prev;
+    };
   }, [open]);
 
   const closeDrawer = () => setOpen(false);
-  const toggleDrawer = () => setOpen(v => !v);
+  const toggleDrawer = () => setOpen((v) => !v);
 
-  const headerClass = scrolled ? `${styles.header} ${styles.scrolled}` : styles.header;
+  const headerClass = scrolled
+    ? `${styles.header} ${styles.scrolled}`
+    : styles.header;
   const drawerClass = open ? `${styles.drawer} ${styles.open}` : styles.drawer;
-  const backdropClass = open ? `${styles.backdrop} ${styles.open}` : styles.backdrop;
+  const backdropClass = open
+    ? `${styles.backdrop} ${styles.open}`
+    : styles.backdrop;
   const burgerClass = open ? `${styles.burger} ${styles.open}` : styles.burger;
-  const getLinkClass = ({ isActive }) => (isActive ? `${styles.link} ${styles.linkActive}` : styles.link);
+  const getLinkClass = ({ isActive }) =>
+    isActive ? `${styles.link} ${styles.linkActive}` : styles.link;
 
   return (
     <header className={headerClass}>
@@ -71,12 +82,21 @@ const Header = () => {
 
       {/* Main header bar */}
       <div className={styles.bar}>
-        <Link to="/" className={styles.logo} onClick={closeDrawer} aria-label="Blade and Bourbon Home">
+        <Link
+          to="/"
+          className={styles.logo}
+          onClick={closeDrawer}
+          aria-label="Blade and Bourbon Home"
+        >
           {brand}
         </Link>
 
-        <nav id="primary-navigation" className={styles.nav} aria-label="Primary">
-          {navItems.map(item => (
+        <nav
+          id="primary-navigation"
+          className={styles.nav}
+          aria-label="Primary"
+        >
+          {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
@@ -123,7 +143,7 @@ const Header = () => {
         aria-labelledby="primary-navigation"
       >
         <div className={styles.drawerInner}>
-          {navItems.map(item => (
+          {navItems.map((item) => (
             <NavLink
               key={`${item.to}-mobile`}
               to={item.to}
